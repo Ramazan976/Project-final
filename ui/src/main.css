@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+
+
+
+.banner-img {
+    @media (max-width: 991px) {
+        display: none;
+    }
+}
+
+.lg\:hidden a {
+    color: black;
+}
+
+.lg\:hidden a:hover {
+    color: #FF8C00;
+}
