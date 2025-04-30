@@ -1,6 +1,8 @@
 import React from "react";
 import ProductSlider from "../components/ProductSlider";
 import CountdownTimer from "../components/Countdowntimer";
+import ShoeSlider from "../components/shoeslider";
+import DealsofTheWeek from "../components/DealsofTheWeek";
 const slides = [
   {
     image: "https://preview.colorlib.com/theme/karma/img/banner/banner-img.png",
@@ -127,15 +129,40 @@ function Home() {
       </section>
 
       <ProductSlider />
-            
-        <div className="relative inline-block ">
-          <img src="https://preview.colorlib.com/theme/karma/img/exclusive.jpg" alt="shoes-black" className="w-full h-auto"/>
+            <div className=" flex-col lg:flex-row justify-center items-center flex">
+        <div className="relative inline-block w-full max-w-[100%] max-h-[100%]">
+          <img src="https://preview.colorlib.com/theme/karma/img/exclusive.jpg" alt="shoes-black" className="w-full h-full object-cover"/>
           <div className=" absolute top-0 left-0 w-full h-full flex justify-center items-center flex-col bg-black/50">
           <h2 className="text-white font-semibold text-3xl mb-3">Exclusive Hot Deal Ends Soon!</h2>
           <p className="text-white mb-7">Who are in extremely love with eco friendly system.</p>
           <CountdownTimer targetDate= "2025-05-01T00:00:00"/>
           </div>
         </div>
+        <div className="lg:w-[700px] lg:h-[700px] w-full flex justify-center items-center ">
+      <ShoeSlider />
+        </div>
+        </div>
+              
+          <section>
+          <div className=" w-full mt-20 flex flex-wrap justify-center items-center">
+            <a href="#" className="max-w-xs h-auto mx-4">
+              <img src="	https://preview.colorlib.com/theme/karma/img/brand/1.png" alt=""  className="opacity-20 hover:opacity-70"/>
+            </a>
+            <a href="#" className="max-w-xs h-auto  mx-4">
+              <img src="https://preview.colorlib.com/theme/karma/img/brand/2.png" alt=""  className="opacity-20 hover:opacity-70"/>
+            </a>
+            <a href="#" className="max-w-xs h-auto  mx-4">
+              <img src="	https://preview.colorlib.com/theme/karma/img/brand/3.png" alt=""  className="opacity-20 hover:opacity-70"/>
+            </a>
+            <a href="#" className="max-w-xs h-auto  mx-4">
+              <img src="	https://preview.colorlib.com/theme/karma/img/brand/4.png" alt=""  className="opacity-20 hover:opacity-70"/>
+            </a>
+            <a href="#" className="max-w-xs h-auto mx-4">
+              <img src="	https://preview.colorlib.com/theme/karma/img/brand/5.png" alt=""  className="opacity-20 hover:opacity-70"/>
+            </a>
+          </div>
+        <DealsofTheWeek />
+          </section>
     </>
     
   );
