@@ -29,7 +29,7 @@ function CountdownTimer({ targetDate }) {
   }, [targetDate]);
 
   return (
-    <div className="relative w-[420px] flex items-center flex-row bg-white text-2xl font-semibold p-7 rounded-2xl text-center">
+    <div className="relative w-[420px] h-[90px] flex items-center flex-row bg-white text-2xl font-semibold p-7 rounded-2xl text-center">
   <div className="flex flex-col items-center w-20">
     <div className='text-3xl'>{timeLeft.days}</div>
     <div className='text-sm font-normal'>Days</div>
