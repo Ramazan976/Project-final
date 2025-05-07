@@ -30,8 +30,15 @@ const Navbar = () => {
 
                     {/* Desktop Menu */}
                     <div className="hidden lg:flex gap-x-12 items-center">
-                        <Link to="/" className="text-[12px] font-medium !text-amber-500">HOME</Link>
-                        <Link to="/shop" className="text-[12px] font-medium hover:!text-amber-500">SHOP</Link>
+                        <Link to="/" className="text-[12px] font-medium !text-amber-500 h-8 flex items-center justify-center">HOME</Link>
+                        
+                        <div className="relative group h-8 flex items-center justify-center">
+                        <span className="text-[12px] font-medium hover:!text-amber-500 cursor-pointer">SHOP</span>
+                        <div className="absolute left-0 top-13 opacity-0 group-hover:opacity-100 group-hover:block bg-white w-44 h-8 z-10 transition-all duration-300 ease-in-out">
+                        <Link to="/shop/product-details" className="!text-amber-500 hover:!text-white hover:bg-amber-500 h-8 flex items-center justify-center">PRODUCT DETAILS</Link>
+                        </div>
+                        </div>
+
                         <Link to="/pages" className="text-[12px] font-medium hover:!text-amber-500">PAGES</Link>
                         <Link to="/contact" className="text-[12px] font-medium hover:!text-orange-400">CONTACT</Link>
 

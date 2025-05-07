@@ -49,14 +49,14 @@ const FollowUs = () => (
 
 function Footer() {
     return (
-        <div className="text-white flex flex-col gap-8 pt-20 pb-20 pl-10 bg-[#222222] min-h-[400px]">
-            <div className="flex flex-row gap-7">
+        <div className="text-white flex flex-col justify-center items-center gap-8 pt-20 pb-20 bg-[#222222] min-h-[400px]">
+            <div className="flex flex-row gap-7 justify-center">
             <AboutUs />
             <Newsletter />
             <InstagramFeed />
             <FollowUs />
             </div>
-            <div className="text-center py-4 mt-auto">
+            <div className="text-center py-10 mt-auto">
             <p className="text-[#777777]">Copyright ©2025 All rights reserved | This template is made with <i className="fa-regular fa-heart text-amber-500"></i> by <a href="https://colorlib.com" target="_blank" className="!text-amber-500">Colorlib</a></p>
             </div>
         </div>

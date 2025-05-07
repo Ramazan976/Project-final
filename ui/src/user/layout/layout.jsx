@@ -10,7 +10,7 @@ function Layout() {
         <main className="pt-[70px]">
             <Outlet />
         </main>
-        <Footer />
+        <Footer/>
         </>
     );
 };

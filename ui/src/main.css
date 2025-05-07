@@ -16,3 +16,12 @@
 .lg\:hidden a:hover {
     color: #FF8C00;
 }
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;  
+  }
+  

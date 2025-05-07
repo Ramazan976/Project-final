@@ -4,7 +4,7 @@ function Shop() {
 
     return (
 
-    <h1 className="flex justify-center items-center">Shop page</h1>
+    <h1 className="flex justify-center items-center"></h1>
         
     )
 }
