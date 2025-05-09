@@ -7,7 +7,7 @@ function Layout() {
     return (
         <> 
         <Navbar/>
-        <main className="pt-[70px]">
+        <main className="min-h-screen">
             <Outlet />
         </main>
         <Footer/>

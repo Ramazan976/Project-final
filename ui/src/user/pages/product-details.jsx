@@ -22,9 +22,9 @@ function ProductDetails() {
 
   return (
     <>
-      <section className="relative h-[400px] w-full bottom-38">
+      <section className="relative h-[400px] w-full bottom-20 overflow-x-hidden">
         <img src="https://preview.colorlib.com/theme/karma/img/banner/common-banner.jpg" alt="" className="absolute top-0 left-0 w-full h-full object-cover" />
-        <div className="relative flex flex-col items-end gap-3 w-full pr-72 pt-56">
+        <div className="absolute inset-0 flex flex-col items-end gap-3 px-4 md:px-12 lg:px-40 pt-52 z-10 max-w-screen-xl mx-auto">
           <h2 className="font-bold text-4xl text-white text-center">Product Details Page</h2>
           <div className="flex flex-row justify-start gap-2">
             <a href="/" className="text-white">Home</a>
@@ -37,8 +37,8 @@ function ProductDetails() {
       </section>
 
 
-      <div className="flex flex-row gap-10 justify-center items-center mt-10 mb-20">
-        <div className="relative w-[500px] h-[350px] overflow-hidden transition-all duration-200">
+      <div className="flex flex-col lg:flex-row  gap-15 justify-center items-center mt-10 mb-20">
+        <div className="relative w-[500px] h-[550px] overflow-hidden transition-all duration-200">
 
           <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hidden scroll-smooth h-full" ref={sliderRef}>
             {images.map((images, index) => (
@@ -46,7 +46,7 @@ function ProductDetails() {
             ))}
           </div>
 
-          <div className="absolute bottom-3 right-3 flex flex-col gap-2 px-3 py-35 ">
+          <div className="absolute bottom-3 right-3 flex flex-col gap-2 px-3 py-60 ">
             {images.map((_, index) => (
               <span
                 key={index}
@@ -74,8 +74,8 @@ function ProductDetails() {
         </div>
       </div>
 
-      <section className="border-0 h-13 w-[990px] border-[#777777] bg-[#E8F0F2] mx-auto flex items-center justify-center">
-        <div className="flex gap-4 font-sans">
+      <section className="py-4 px-4 max-w-[1100px] mx-auto">
+        <div className="flex border-0 border-[#777777] items-center justify-center h-13 gap-4 px-5 w-full sm:px-6 lg:px-6 font-sans bg-[#E8F0F2]">
           <button
             onClick={() => setActiveTab("description")}
             className={`bg-white w-35 h-9 ${activeTab === "description" ? "!bg-amber-500 text-white" : "text-black"
@@ -105,9 +105,8 @@ function ProductDetails() {
             Reviews
           </button>
         </div>
-      </section>
 
-      <div className="border-2 w-[990px] mx-auto mt-4 mb-30 p-4">
+            <div className="border-2 mx-auto mt-4 mb-30 p-4 px-5  sm:px-6 lg:px-6">
         {activeTab === "description" && (
           <p className="text-[#777777]">Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures feature women of all shapes and sizes enjoying themselves .
             Born between the two world wars, Beryl Cook eventually left Kendrick School in Reading at the age of 15, where she went to secretarial school and then into an insurance office.
@@ -167,7 +166,7 @@ function ProductDetails() {
                       src={`https://preview.colorlib.com/theme/karma/img/product/review-${index + 1}.png`}
                       alt="User"
                       className="w-16 h-16 object-cover"
-                    />
+                      />
                     <div className="flex flex-col">
                       <p className="font-semibold">Blake Ruiz</p>
                       <p className="text-[#777777] text-sm">12th Feb, 2018 at 05:56 pm</p>
@@ -258,6 +257,7 @@ function ProductDetails() {
           </div>
         )}
       </div>
+        </section>
       
         <DealsofTheWeek />
     </>
