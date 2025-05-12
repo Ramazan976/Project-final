@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from '../image/logo-removebg-preview.png';
 
 const Navbar = () => {
     const [showInput, setShowInput] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleLogoClick = (event) => {
         event.preventDefault();
@@ -39,11 +40,17 @@ const Navbar = () => {
                         </div>
                         </div>
 
-                        <Link to="/pages" className="text-[12px] font-medium hover:!text-amber-500">PAGES</Link>
+                        <div className="relative group h-8 flex items-center justify-center">
+                        <span className="text-[12px] font-medium hover:!text-amber-500">PAGES</span>
+                        <div className="absolute left-0 top-13 opacity-0 group-hover:opacity-100 group-hover:block bg-white w-44 h-8 z-10 transition-all duration-300 ease-in-out">
+                        <Link to="/pages/login" className="!text-amber-500 hover:!text-white hover:bg-amber-500 h-8 flex items-center justify-center">LOGIN</Link>
+                        </div>
+                        </div>    
+                        
                         <Link to="/contact" className="text-[12px] font-medium hover:!text-orange-400">CONTACT</Link>
 
                         <div className="flex gap-x-6">
-                            <span><i className="fa-solid fa-bag-shopping"></i></span>
+                            <span><i className="fa-solid fa-bag-shopping" onClick={() => navigate('/cart')} ></i></span>
                             <span><i className="fa-solid fa-magnifying-glass cursor-pointer" onClick={toggleInput}></i></span>
                         </div>
                     </div>

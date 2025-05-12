@@ -4,8 +4,7 @@ import React from "react";
 function AdminHome() {
   return (
     <div>
-      <h1>Admin Dashboard</h1>
-      <p>Welcome, Admin! You have full access to this page.</p>
+      Hello welcome to my world 🌎
     </div>
   );
 }

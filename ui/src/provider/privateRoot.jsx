@@ -2,15 +2,14 @@ import React, { useEffect } from "react";
 import { Navigate, Outlet, useNavigate } from "react-router-dom";
 
 
-const PrivateRoot = () => {
-  const navigate = useNavigate() 
+const PrivateRoot = () => { 
   const role = (localStorage.getItem("role")); 
 
-  useEffect(() => {
-    if (role != "admin") {
-      navigate("/");
+  
+    if ( role !== "admin") {
+      return <Navigate to="/pages/login" replace />
     }
-  }, [role, navigate]);
+
 
   return <Outlet />; 
 };

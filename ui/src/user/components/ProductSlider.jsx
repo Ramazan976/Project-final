@@ -2,26 +2,107 @@ import React, { useEffect, useState } from "react";
 
 const ProductSlider = () => {
   const latestProducts = [
-    "https://preview.colorlib.com/theme/karma/img/product/p1.jpg",
-    "https://preview.colorlib.com/theme/karma/img/product/p2.jpg",
-    "https://preview.colorlib.com/theme/karma/img/product/p3.jpg",
-    "https://preview.colorlib.com/theme/karma/img/product/p4.jpg",
-    "https://preview.colorlib.com/theme/karma/img/product/p5.jpg",
-    "https://preview.colorlib.com/theme/karma/img/product/p6.jpg",
-    "https://preview.colorlib.com/theme/karma/img/product/p7.jpg",
-    "https://preview.colorlib.com/theme/karma/img/product/p8.jpg",
+     {
+    image: "https://preview.colorlib.com/theme/karma/img/product/p1.jpg",
+    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    price: "$150.00",
+    oldPrice: "$210.00"
+  },
+  {
+    image: "https://preview.colorlib.com/theme/karma/img/product/p2.jpg",
+    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    price: "$150.00",
+    oldPrice: "$210.00"
+  },
+  {
+    image: "https://preview.colorlib.com/theme/karma/img/product/p3.jpg",
+    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    price: "$150.00",
+    oldPrice: "$210.00"
+  },
+  {
+    image: "https://preview.colorlib.com/theme/karma/img/product/p4.jpg",
+    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    price: "$150.00",
+    oldPrice: "$210.00"
+  },
+  {
+    image: "https://preview.colorlib.com/theme/karma/img/product/p5.jpg",
+    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    price: "$150.00",
+    oldPrice: "$210.00"
+  },
+  {
+    image: "https://preview.colorlib.com/theme/karma/img/product/p6.jpg",
+    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    price: "$150.00",
+    oldPrice: "$210.00"
+  },
+  {
+    image: "https://preview.colorlib.com/theme/karma/img/product/p7.jpg",
+    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    price: "$150.00",
+    oldPrice: "$210.00"
+  },
+  {
+    image: "https://preview.colorlib.com/theme/karma/img/product/p8.jpg",
+    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    price: "$150.00",
+    oldPrice: "$210.00"
+  }
   ];
 
   const comingProducts = [
-    "https://preview.colorlib.com/theme/karma/img/product/p8.jpg",
-    "https://preview.colorlib.com/theme/karma/img/product/p7.jpg",
-    "https://preview.colorlib.com/theme/karma/img/product/p6.jpg",
-    "https://preview.colorlib.com/theme/karma/img/product/p5.jpg",
-    "https://preview.colorlib.com/theme/karma/img/product/p4.jpg",
-    "https://preview.colorlib.com/theme/karma/img/product/p3.jpg",
-    "https://preview.colorlib.com/theme/karma/img/product/p2.jpg",
-    "https://preview.colorlib.com/theme/karma/img/product/p1.jpg",
+    {
+    image: "https://preview.colorlib.com/theme/karma/img/product/p8.jpg",
+    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    price: "$150.00",
+    oldPrice: "$210.00"
+    },
+    {
+    image: "https://preview.colorlib.com/theme/karma/img/product/p7.jpg",
+    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    price: "$150.00",
+    oldPrice: "$210.00"
+    },
+    {
+    image: "https://preview.colorlib.com/theme/karma/img/product/p6.jpg",
+    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    price: "$150.00",
+    oldPrice: "$210.00"
+    },
+    {
+    image: "https://preview.colorlib.com/theme/karma/img/product/p5.jpg",
+    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    price: "$150.00",
+    oldPrice: "$210.00"
+    },
+     {
+    image: "https://preview.colorlib.com/theme/karma/img/product/p4.jpg",
+    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    price: "$150.00",
+    oldPrice: "$210.00"
+    },
+      {
+    image: "https://preview.colorlib.com/theme/karma/img/product/p3.jpg",
+    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    price: "$150.00",
+    oldPrice: "$210.00"
+    },
+     {
+    image: "https://preview.colorlib.com/theme/karma/img/product/p2.jpg",
+    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    price: "$150.00",
+    oldPrice: "$210.00"
+    },
+    {
+    image: "https://preview.colorlib.com/theme/karma/img/product/p1.jpg",
+    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    price: "$150.00",
+    oldPrice: "$210.00"
+    }
   ];
+
 
   const products = [latestProducts, comingProducts];
   const [currentPage, setCurrentPage] = useState(0);
@@ -37,7 +118,12 @@ const ProductSlider = () => {
   const getHeading = () => {
     return currentPage === 0 ? "Latest Products" : "Coming Soon";
   };
-
+  
+  const addToCart = (product) => {
+  const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
+  existingCart.push(product);
+  localStorage.setItem('cart', JSON.stringify(existingCart));
+};
 
   return (
     <div className="relative p-10 pt-96  w-full max-w-screen-xl mx-auto">
@@ -70,32 +156,32 @@ const ProductSlider = () => {
               key={groupIndex}
               className="grid grid-cols-1  sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:grid-cols-4 gap-4 w-300 p-4"
             >
-              {group.map((img, index) => (
+              {group.map((product, index) => (
                 <div
                   key={index}
                   className="p-4 items-center flex flex-col w-full bg-white "
                 >
                   <img
-                    src={img}
+                    src={product.image}
                     alt={`Product ${index + 1}`}
                     className="w-full object-contain"
                   />
                   <div className="w-full mt-2">
                     <h2 className="text-sm font-semibold leading-5 line-clamp-2">
-                      ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON
+                      {product.name}
                     </h2>
                     <div className="flex gap-3">
-                      <p>$150.00</p>
-                      <p className="text-gray-400 line-through">$210.00</p>
+                      <p>{product.price}</p>
+                      <p className="text-gray-400 line-through">{product.oldPrice}</p>
                     </div>
 
 
                     <div className="flex flex-row gap-2  items-center relative">
                     <div className="flex gap-4 relative">
                     <div className="relative group flex-shrink-0 transition-all duration-300">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokewidth="1.5" stroke="currentColor"
+                      <svg xmlns="http://www.w3.org/2000/svg" onClick={() => addToCart(product)} fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"
                         className="size-7 inset-0 bg-[#838bb1] relative p-1 rounded-2xl text-white hover:text-amber-600 transition-colors duration-200 hover:bg-orange-500 z-10 group-hover:mr-24">
-                        <path strokelinecap="round" strokelinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.9931.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243 l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0.375.375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.9931.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243 l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0.375.375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                       </svg>
                       <span className="absolute z-0 left-7 top-1/2 -translate-y-1/2 translate-x-[-1rem] opacity-0 text-black whitespace-nowrap transition-all duration-300 group-hover:translate-x-2 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto">
                         ADD TO BAG

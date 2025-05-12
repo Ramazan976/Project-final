@@ -37,8 +37,8 @@ function ProductDetails() {
       </section>
 
 
-      <div className="flex flex-col lg:flex-row  gap-15 justify-center items-center mt-10 mb-20">
-        <div className="relative w-[500px] h-[550px] overflow-hidden transition-all duration-200">
+      <div className="flex flex-col lg:flex-row  gap-25 justify-center items-center mt-10 mb-20 px-4 sm:px-6 lg:px-6">
+        <div className="relative w-[550px] h-[600px] overflow-hidden transition-all duration-200 ">
 
           <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hidden scroll-smooth h-full" ref={sliderRef}>
             {images.map((images, index) => (
@@ -46,7 +46,7 @@ function ProductDetails() {
             ))}
           </div>
 
-          <div className="absolute bottom-3 right-3 flex flex-col gap-2 px-3 py-60 ">
+          <div className="absolute bottom-3 right-3 flex flex-col gap-2 px-3 py-65 ">
             {images.map((_, index) => (
               <span
                 key={index}

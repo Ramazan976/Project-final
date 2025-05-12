@@ -19,7 +19,7 @@ const rolexProducts = [
 
 const DealsofTheWeek = () => {
     return (    
-        <div className="flex flex-col mb-20 items-center max-h-screen-xl">
+        <div className="flex flex-col mb-20 items-center max-h-screen-xl px-4 sm:px-6 lg:px-6">
             <h1 className="text-3xl font-semibold mb-2">Deals of the Week</h1>
             <p className="text-gray-500">The best deals of week are here! Enjoy big discounts on selected products.</p>
 

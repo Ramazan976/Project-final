@@ -4,7 +4,7 @@ function Pages() {
     
     return (
         <div>
-            <h1 className="flex justify-center items-center">Pages</h1>
+            
         </div>
     )
 }
