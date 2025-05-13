@@ -12,8 +12,7 @@ const Login = () => {
     if (username === "admin" && password === "admin1234") {
       localStorage.setItem("role", "admin");
       navigate("/home");
-    } else {
-      alert ("Yanlış istifadeçi adı və ya şifrə");
+
     }
   };
 
