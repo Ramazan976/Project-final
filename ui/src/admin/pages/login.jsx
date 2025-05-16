@@ -10,9 +10,10 @@ const Login = () => {
     e.preventDefault();
 
     if (username === "admin" && password === "admin1234") {
-      localStorage.setItem("role", "admin");
-      navigate("/home");
-
+     localStorage.setItem("role", "admin");
+     navigate("/home"); 
+    } else {
+      alert("Wrong username or password");
     }
   };
 

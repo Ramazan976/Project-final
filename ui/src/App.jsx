@@ -9,6 +9,7 @@ import Contact from "./user/pages/contact";
 import ProductDetails from "./user/pages/product-details";
 import CartPage from "./user/components/CartPage";
 import Login from "./admin/pages/login";
+import ProductCheckout from "./user/pages/product-checkout";
 function App() {
   return (
     <BrowserRouter>  
@@ -21,7 +22,7 @@ function App() {
           <Route element={<Home />} path="/home" />
           <Route path="/home" element={<Home />} />
           <Route path="/shop/product-details" element={<ProductDetails />}/>
-
+          <Route path="/shop/product-checkout" element={<ProductCheckout />}/>
           <Route path="contact" element={<Contact />} />
           <Route path="/cart" element={<CartPage />} />
         </Route>

@@ -35,15 +35,17 @@ const Navbar = () => {
                         
                         <div className="relative group h-8 flex items-center justify-center">
                         <span className="text-[12px] font-medium hover:!text-amber-500 cursor-pointer">SHOP</span>
-                        <div className="absolute left-0 top-13 opacity-0 group-hover:opacity-100 group-hover:block bg-white w-44 h-8 z-10 transition-all duration-300 ease-in-out">
-                        <Link to="/shop/product-details" className="!text-amber-500 hover:!text-white hover:bg-amber-500 h-8 flex items-center justify-center">PRODUCT DETAILS</Link>
+                        <div className="absolute left-0 top-14 opacity-0 group-hover:opacity-100 group-hover:block bg-white w-44 z-10 font-bold transition-all duration-300 ease-in-out">
+                        <Link to="/shop/product-details" className="!text-amber-500 hover:!text-white hover:bg-amber-500 text-[14px] h-8 flex items-center justify-center">PRODUCT DETAILS</Link>
+                        <div className="border-b border-gray-200"></div>
+                        <Link to="/shop/product-checkout" className="!text-amber-500 hover:!text-white hover:bg-amber-500 h-8 text-[14px] flex items-center justify-center">PRODUCT CHECKOUT</Link>
                         </div>
                         </div>
 
                         <div className="relative group h-8 flex items-center justify-center">
-                        <span className="text-[12px] font-medium hover:!text-amber-500">PAGES</span>
-                        <div className="absolute left-0 top-13 opacity-0 group-hover:opacity-100 group-hover:block bg-white w-44 h-8 z-10 transition-all duration-300 ease-in-out">
-                        <Link to="/pages/login" className="!text-amber-500 hover:!text-white hover:bg-amber-500 h-8 flex items-center justify-center">LOGIN</Link>
+                        <span className="text-[12px] font-medium hover:!text-amber-500 cursor-pointer">PAGES</span>
+                        <div className="absolute left-0 top-14 opacity-0 group-hover:opacity-100 group-hover:block bg-white w-44 font-bold h-8 z-10 transition-all duration-300 ease-in-out">
+                        <Link to="/pages/login" className="!text-amber-500 hover:!text-white hover:bg-amber-500 h-8 text-[14px] flex items-center justify-center">LOGIN</Link>
                         </div>
                         </div>    
                         
