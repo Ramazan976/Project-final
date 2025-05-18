@@ -114,7 +114,7 @@ function ProductCheckout() {
       <span className="text-red-500 absolute right-48 top-1/2 -translate-y-1/2 text-lg peer-focus:hidden peer-placeholder-shown:inline">*</span>
       </div>
       </div>
-
+      
       <div className="flex max-w-6xl">
       <select className="w-2xl border outline-0 px-4 h-10 text-gray-500" name="Country" id="Country">
         <option value="">Country</option>

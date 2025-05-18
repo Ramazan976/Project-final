@@ -135,7 +135,7 @@ function Home() {
           <div className=" absolute top-0 left-0 w-full h-full flex justify-center items-center flex-col bg-black/50">
           <h2 className="text-white font-semibold text-3xl mb-3">Exclusive Hot Deal Ends Soon!</h2>
           <p className="text-white mb-7">Who are in extremely love with eco friendly system.</p>
-          <CountdownTimer targetDate= "2025-05-15T00:00:00"/>
+          <CountdownTimer targetDate= "2025-05-30T00:00:00"/>
           </div>
         </div>
         <div className="lg:w-[700px] lg:h-[700px] w-full flex justify-center items-center ">
