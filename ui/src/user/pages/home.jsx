@@ -22,6 +22,7 @@ const slides = [
 ];
 
 
+
 function Home() {
   return (
     <>

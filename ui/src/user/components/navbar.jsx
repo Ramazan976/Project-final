@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from '../image/logo-removebg-preview.png';
 
-const Navbar = () => {
+const Navbar = ({ searchQuery, setSearchQuery }) => {
     const [showInput, setShowInput] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const navigate = useNavigate();
@@ -53,7 +53,7 @@ const Navbar = () => {
 
                         <div className="flex gap-x-6">
                             <span><i className="fa-solid fa-bag-shopping" onClick={() => navigate('/cart')} ></i></span>
-                            <span><i className="fa-solid fa-magnifying-glass cursor-pointer" onClick={toggleInput}></i></span>
+                            <span><i className="fa-solid fa-magnifying-glass cursor-pointer" onClick={toggleInput} value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}></i></span>
                         </div>
                     </div>
 

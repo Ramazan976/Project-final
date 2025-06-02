@@ -23,7 +23,7 @@ const DealsofTheWeek = () => {
             <h1 className="text-3xl font-semibold mb-2">Deals of the Week</h1>
             <p className="text-gray-500">The best deals of week are here! Enjoy big discounts on selected products.</p>
 
-                <div className="flex flex-row justify-center">
+                <div className="flex flex-col lg:flex-row justify-center w-full">
 
             <div className="grid grid-cols-3 justify-center gap-6 mt-20 max-w-screen-xl">
                 {products.map((product, index) => (
@@ -40,7 +40,7 @@ const DealsofTheWeek = () => {
                 ))}
                 </div>
                 {rolexProducts.map((product, index) => (
-                <div key={index} className=" flex mt-20 h-[300px]">
+                <div key={index} className=" flex items-center mt-20 h-[300px]">
                     <img src={`${product.img}`} 
                      alt=""/>
                 </div>    

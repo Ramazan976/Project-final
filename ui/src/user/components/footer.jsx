@@ -49,8 +49,8 @@ const FollowUs = () => (
 
 function Footer() {
     return (
-        <div className="text-white flex flex-col justify-center items-center gap-8 pt-20 pb-20 bg-[#222222] min-h-[400px]">
-            <div className="flex flex-row gap-7 justify-center">
+        <div className="text-white flex flex-col lg:flex-col px-5 w-full justify-center items-center gap-8 pt-20 pb-20 bg-[#222222] min-h-[400px]">
+            <div className="flex flex-row flex-wrap gap-7 px-5 justify-center">
             <AboutUs />
             <Newsletter />
             <InstagramFeed />

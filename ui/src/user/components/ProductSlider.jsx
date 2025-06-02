@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const ProductSlider = () => {
+const ProductSlider = ({searchTerm}) => {
   const latestProducts = [
      {
     image: "https://preview.colorlib.com/theme/karma/img/product/p1.jpg",
@@ -10,43 +10,43 @@ const ProductSlider = () => {
   },
   {
     image: "https://preview.colorlib.com/theme/karma/img/product/p2.jpg",
-    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    name: "ADIDAS HAMMER GRIP – ULTIMATE PERFORMANCE FOOTWEAR",
     price: "$150.00",
     oldPrice: "$210.00"
   },
   {
     image: "https://preview.colorlib.com/theme/karma/img/product/p3.jpg",
-    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    name: "ADIDAS PRO ATHLETE EDITION WITH HAMMER SOLE",
     price: "$150.00",
     oldPrice: "$210.00"
   },
   {
     image: "https://preview.colorlib.com/theme/karma/img/product/p4.jpg",
-    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    name: "ADIDAS PERFORMANCE BOOST WITH ALL-NEW HAMMER SOLE",
     price: "$150.00",
     oldPrice: "$210.00"
   },
   {
     image: "https://preview.colorlib.com/theme/karma/img/product/p5.jpg",
-    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    name: "ADIDAS POWERSTEP – HAMMER SOLE FOR ACTIVE LIFESTYLES",
     price: "$150.00",
     oldPrice: "$210.00"
   },
   {
     image: "https://preview.colorlib.com/theme/karma/img/product/p6.jpg",
-    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    name: "ADIDAS SPORTS PRO WITH NEW HAMMER SOLE TECHNOLOGY",
     price: "$150.00",
     oldPrice: "$210.00"
   },
   {
     image: "https://preview.colorlib.com/theme/karma/img/product/p7.jpg",
-    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    name: "ADIDAS HAMMER SOLE – BUILT FOR ATHLETES",
     price: "$150.00",
     oldPrice: "$210.00"
   },
   {
     image: "https://preview.colorlib.com/theme/karma/img/product/p8.jpg",
-    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    name: "ADIDAS HAMMER SOLE SNEAKERS – ENGINEERED FOR SPEED AND SUPPORT",
     price: "$150.00",
     oldPrice: "$210.00"
   }
@@ -55,43 +55,43 @@ const ProductSlider = () => {
   const comingProducts = [
     {
     image: "https://preview.colorlib.com/theme/karma/img/product/p8.jpg",
-    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    name: "ADIDAS HAMMER SOLE SNEAKERS – ENGINEERED FOR SPEED AND SUPPORT",
     price: "$150.00",
     oldPrice: "$210.00"
     },
     {
     image: "https://preview.colorlib.com/theme/karma/img/product/p7.jpg",
-    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    name: "ADIDAS HAMMER SOLE – BUILT FOR ATHLETES",
     price: "$150.00",
     oldPrice: "$210.00"
     },
     {
     image: "https://preview.colorlib.com/theme/karma/img/product/p6.jpg",
-    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    name: "ADIDAS SPORTS PRO WITH NEW HAMMER SOLE TECHNOLOGY",
     price: "$150.00",
     oldPrice: "$210.00"
     },
     {
     image: "https://preview.colorlib.com/theme/karma/img/product/p5.jpg",
-    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    name: "ADIDAS POWERSTEP – HAMMER SOLE FOR ACTIVE LIFESTYLES",
     price: "$150.00",
     oldPrice: "$210.00"
     },
      {
     image: "https://preview.colorlib.com/theme/karma/img/product/p4.jpg",
-    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    name: "ADIDAS PERFORMANCE BOOST WITH ALL-NEW HAMMER SOLE",
     price: "$150.00",
     oldPrice: "$210.00"
     },
       {
     image: "https://preview.colorlib.com/theme/karma/img/product/p3.jpg",
-    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    name: "ADIDAS PRO ATHLETE EDITION WITH HAMMER SOLE",
     price: "$150.00",
     oldPrice: "$210.00"
     },
      {
     image: "https://preview.colorlib.com/theme/karma/img/product/p2.jpg",
-    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
+    name: "ADIDAS HAMMER GRIP – ULTIMATE PERFORMANCE FOOTWEAR",
     price: "$150.00",
     oldPrice: "$210.00"
     },
@@ -105,6 +105,9 @@ const ProductSlider = () => {
 
 
   const products = [latestProducts, comingProducts];
+    const filteredProducts = products.filter((product) =>
+    product.name?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   const [currentPage, setCurrentPage] = useState(0);
 
   const nextSlide = () => {
@@ -150,7 +153,7 @@ const ProductSlider = () => {
             transform: `translateX(-${currentPage * 50}%)`,
             width: `${products.length * 100}%`,
           }}
-        >
+        > 
           {products.map((group, groupIndex) => (
             <div
               key={groupIndex}
@@ -218,6 +221,7 @@ const ProductSlider = () => {
               ))}
             </div>
           ))}
+
         </div>
       </div>
     </div>
