@@ -25,7 +25,7 @@ const DealsofTheWeek = () => {
 
                 <div className="flex flex-col lg:flex-row justify-center w-full">
 
-            <div className="grid grid-cols-3 justify-center gap-6 mt-20 max-w-screen-xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center gap-6 mt-20 max-w-screen-xl">
                 {products.map((product, index) => (
                     <div key={index} className="flex flex-row gap-3 items-center w-[270px]">
                         <img src={`${product.img}`} 
