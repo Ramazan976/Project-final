@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { Navigate, Outlet, useNavigate } from "react-router-dom";
+import React from "react";
+import { Navigate, Outlet } from "react-router-dom";
 
 
 const PrivateRoot = () => { 
-  const role = (localStorage.getItem("role")); 
+  const role = localStorage.getItem("role"); 
 
   
     if ( role !== "admin") {

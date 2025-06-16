@@ -103,19 +103,20 @@ const ProductSlider = ({searchTerm}) => {
     }
   ];
 
+  const allProducts = [...latestProducts, ...comingProducts];
 
-  const products = [latestProducts, comingProducts];
-    const filteredProducts = products.filter((product) =>
-    product.name?.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredProducts = allProducts.filter((product) =>
+  product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
   const [currentPage, setCurrentPage] = useState(0);
 
   const nextSlide = () => {
-    setCurrentPage((prev) => (prev + 1) % products.length);
+    setCurrentPage((prev) => (prev + 1) % filteredProducts.length);
   };
 
   const prevSlide = () => {
-    setCurrentPage((prev) => (prev - 1 + products.length) % products.length);
+    setCurrentPage((prev) => (prev - 1 + filteredProducts.length) % filteredProducts.length);
   };
 
   const getHeading = () => {
@@ -151,10 +152,10 @@ const ProductSlider = ({searchTerm}) => {
           className="flex transition-transform duration-700 ease-in-out w-full"
           style={{
             transform: `translateX(-${currentPage * 50}%)`,
-            width: `${products.length * 100}%`,
+            width: `${filteredProducts.length * 100}%`,
           }}
         > 
-          {products.map((group, groupIndex) => (
+          {filteredProducts.map((group, groupIndex) => (
             <div
               key={groupIndex}
               className="grid grid-cols-1  sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:grid-cols-4 gap-4 w-300 p-4"

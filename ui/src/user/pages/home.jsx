@@ -26,6 +26,8 @@ const slides = [
 function Home() {
   return (
     <>
+     
+
       <section className="relative h-[670px] pt-[70px] overflow-hidden mt-[-70px]">
         <div
           className="absolute inset-0 h-full w-full bg-cover bg-center bg-no-repeat z-0"
@@ -94,7 +96,7 @@ function Home() {
       </div>
 
 
-      <section className=" h-[600px] bg-white py-16 flex items-center justify-center">
+      <section className=" h-[600px] bg-white py-16 flex flex-row items-center justify-center">
 
         <div className="grid px-34 absolute grid-cols-3 gap-6 p-8 h-[600px] items-center">
           <div className="relative col-span-2">
