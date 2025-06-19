@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AdminHome = () => {
   const [totalOrders, setTotalOrders] = useState(0);
   const [totalProducts, setTotalProducts] = useState(0);
   const [totalUsers, setTotalUsers] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleStorageChange = () => {
@@ -35,6 +37,11 @@ const AdminHome = () => {
       window.removeEventListener("storage", handleStorageChange);
     };
   }, []);
+
+    const handleGoToHome = () => {
+      // Home səhifəsinə yönləndir
+      navigate("/home");
+    };
 
   return (
     <div className="p-6">

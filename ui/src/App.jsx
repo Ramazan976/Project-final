@@ -11,32 +11,36 @@ import CartPage from "./user/components/CartPage";
 import Login from "./admin/pages/login";
 import ProductCheckout from "./user/pages/product-checkout";
 import ProductSearch from "./admin/pages/productSearch";
+import AddProduct from "./admin/pages/AddProduct";
 
 function App() {
   return (
     <BrowserRouter>  
       <Routes>
-        
+        {/* Ana yönləndirmə */}
         <Route path="/" element={<Navigate to="/pages/login" replace />} />
         
-       
+        {/* Login səhifəsi */}
         <Route path="/pages/login" element={<Login />} />
-        
-       
-        <Route element={<Layout />} path="/">
-          <Route element={<Home />} path="/home" />
-          <Route path="/shop/product-details" element={<ProductDetails />} />
-          <Route path="/shop/product-checkout" element={<ProductCheckout />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="/cart" element={<CartPage />} />
+
+        {/* Admin qorunan yollar */}
+        <Route element={<PrivateRoot allowedRole="admin" />}>
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminHome />} />
+          <Route path="productSearch" element={<ProductSearch />} />
+          <Route path="add-product" element={<AddProduct />} />
+        </Route>
         </Route>
 
-
-        <Route element={<PrivateRoot />}>
-          <Route element={<AdminLayout />} path="/admin">
-          <Route path="/admin/productSearch" element={<ProductSearch />} />
-            <Route index element={<AdminHome />} />
-          </Route>
+        {/* İstifadəçi yolları */}
+        <Route element={<PrivateRoot allowedRole="user" />}>
+        <Route path="/" element={<Layout />}>
+          <Route path="home" element={<Home />} />
+          <Route path="shop/product-details" element={<ProductDetails />} />
+          <Route path="shop/product-checkout" element={<ProductCheckout />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="cart" element={<CartPage />} />
+        </Route>
         </Route>
       </Routes>
     </BrowserRouter>

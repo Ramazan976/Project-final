@@ -1,17 +1,14 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
+const PrivateRoot = ({ allowedRole }) => {
+  const role = localStorage.getItem("role");
 
-const PrivateRoot = () => { 
-  const role = localStorage.getItem("role"); 
+  if (role !== allowedRole) {
+    return <Navigate to="/pages/login" replace />;
+  }
 
-  
-    if ( role !== "admin") {
-      return <Navigate to="/pages/login" replace />
-    }
-
-
-  return <Outlet />; 
+  return <Outlet />;
 };
 
 export default PrivateRoot;

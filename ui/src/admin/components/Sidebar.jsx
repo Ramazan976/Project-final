@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
         <Link to="/admin" className="hover:text-blue-500">Dashboard</Link>
         <Link to="/admin/productSearch" className="hover:text-blue-500">Products</Link>
         <Link to="/admin/orders" className="hover:text-blue-500">Orders</Link>
+        <Link to="/admin/add-product" className="hover:text-blue-500">Add-products</Link>
       </nav>
     </aside>
   );

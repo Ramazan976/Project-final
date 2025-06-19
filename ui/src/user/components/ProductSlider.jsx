@@ -1,186 +1,73 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-const ProductSlider = ({searchTerm}) => {
+const ProductSlider = ({ searchTerm }) => {
   const latestProducts = [
-     {
-    image: "https://preview.colorlib.com/theme/karma/img/product/p1.jpg",
-    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
-    price: "$150.00",
-    oldPrice: "$210.00"
-  },
-  {
-    image: "https://preview.colorlib.com/theme/karma/img/product/p2.jpg",
-    name: "ADIDAS HAMMER GRIP – ULTIMATE PERFORMANCE FOOTWEAR",
-    price: "$150.00",
-    oldPrice: "$210.00"
-  },
-  {
-    image: "https://preview.colorlib.com/theme/karma/img/product/p3.jpg",
-    name: "ADIDAS PRO ATHLETE EDITION WITH HAMMER SOLE",
-    price: "$150.00",
-    oldPrice: "$210.00"
-  },
-  {
-    image: "https://preview.colorlib.com/theme/karma/img/product/p4.jpg",
-    name: "ADIDAS PERFORMANCE BOOST WITH ALL-NEW HAMMER SOLE",
-    price: "$150.00",
-    oldPrice: "$210.00"
-  },
-  {
-    image: "https://preview.colorlib.com/theme/karma/img/product/p5.jpg",
-    name: "ADIDAS POWERSTEP – HAMMER SOLE FOR ACTIVE LIFESTYLES",
-    price: "$150.00",
-    oldPrice: "$210.00"
-  },
-  {
-    image: "https://preview.colorlib.com/theme/karma/img/product/p6.jpg",
-    name: "ADIDAS SPORTS PRO WITH NEW HAMMER SOLE TECHNOLOGY",
-    price: "$150.00",
-    oldPrice: "$210.00"
-  },
-  {
-    image: "https://preview.colorlib.com/theme/karma/img/product/p7.jpg",
-    name: "ADIDAS HAMMER SOLE – BUILT FOR ATHLETES",
-    price: "$150.00",
-    oldPrice: "$210.00"
-  },
-  {
-    image: "https://preview.colorlib.com/theme/karma/img/product/p8.jpg",
-    name: "ADIDAS HAMMER SOLE SNEAKERS – ENGINEERED FOR SPEED AND SUPPORT",
-    price: "$150.00",
-    oldPrice: "$210.00"
-  }
+    { image: "https://preview.colorlib.com/theme/karma/img/product/p1.jpg", name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON", price: "$150.00", oldPrice: "$210.00" },
+    { image: "https://preview.colorlib.com/theme/karma/img/product/p2.jpg", name: "ADIDAS HAMMER GRIP – ULTIMATE PERFORMANCE FOOTWEAR", price: "$150.00", oldPrice: "$210.00" },
+    { image: "https://preview.colorlib.com/theme/karma/img/product/p3.jpg", name: "ADIDAS PRO ATHLETE EDITION WITH HAMMER SOLE", price: "$150.00", oldPrice: "$210.00" },
+    { image: "https://preview.colorlib.com/theme/karma/img/product/p4.jpg", name: "ADIDAS PERFORMANCE BOOST WITH ALL-NEW HAMMER SOLE", price: "$150.00", oldPrice: "$210.00" },
+    { image: "https://preview.colorlib.com/theme/karma/img/product/p5.jpg", name: "ADIDAS POWERSTEP – HAMMER SOLE FOR ACTIVE LIFESTYLES", price: "$150.00", oldPrice: "$210.00" },
+    { image: "https://preview.colorlib.com/theme/karma/img/product/p6.jpg", name: "ADIDAS SPORTS PRO WITH NEW HAMMER SOLE TECHNOLOGY", price: "$150.00", oldPrice: "$210.00" },
+    { image: "https://preview.colorlib.com/theme/karma/img/product/p7.jpg", name: "ADIDAS HAMMER SOLE – BUILT FOR ATHLETES", price: "$150.00", oldPrice: "$210.00" },
+    { image: "https://preview.colorlib.com/theme/karma/img/product/p8.jpg", name: "ADIDAS HAMMER SOLE SNEAKERS – ENGINEERED FOR SPEED AND SUPPORT", price: "$150.00", oldPrice: "$210.00" }
   ];
 
   const comingProducts = [
-    {
-    image: "https://preview.colorlib.com/theme/karma/img/product/p8.jpg",
-    name: "ADIDAS HAMMER SOLE SNEAKERS – ENGINEERED FOR SPEED AND SUPPORT",
-    price: "$150.00",
-    oldPrice: "$210.00"
-    },
-    {
-    image: "https://preview.colorlib.com/theme/karma/img/product/p7.jpg",
-    name: "ADIDAS HAMMER SOLE – BUILT FOR ATHLETES",
-    price: "$150.00",
-    oldPrice: "$210.00"
-    },
-    {
-    image: "https://preview.colorlib.com/theme/karma/img/product/p6.jpg",
-    name: "ADIDAS SPORTS PRO WITH NEW HAMMER SOLE TECHNOLOGY",
-    price: "$150.00",
-    oldPrice: "$210.00"
-    },
-    {
-    image: "https://preview.colorlib.com/theme/karma/img/product/p5.jpg",
-    name: "ADIDAS POWERSTEP – HAMMER SOLE FOR ACTIVE LIFESTYLES",
-    price: "$150.00",
-    oldPrice: "$210.00"
-    },
-     {
-    image: "https://preview.colorlib.com/theme/karma/img/product/p4.jpg",
-    name: "ADIDAS PERFORMANCE BOOST WITH ALL-NEW HAMMER SOLE",
-    price: "$150.00",
-    oldPrice: "$210.00"
-    },
-      {
-    image: "https://preview.colorlib.com/theme/karma/img/product/p3.jpg",
-    name: "ADIDAS PRO ATHLETE EDITION WITH HAMMER SOLE",
-    price: "$150.00",
-    oldPrice: "$210.00"
-    },
-     {
-    image: "https://preview.colorlib.com/theme/karma/img/product/p2.jpg",
-    name: "ADIDAS HAMMER GRIP – ULTIMATE PERFORMANCE FOOTWEAR",
-    price: "$150.00",
-    oldPrice: "$210.00"
-    },
-    {
-    image: "https://preview.colorlib.com/theme/karma/img/product/p1.jpg",
-    name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON",
-    price: "$150.00",
-    oldPrice: "$210.00"
-    }
+    { image: "https://preview.colorlib.com/theme/karma/img/product/p8.jpg", name: "ADIDAS HAMMER SOLE SNEAKERS – ENGINEERED FOR SPEED AND SUPPORT", price: "$150.00", oldPrice: "$210.00" },
+    { image: "https://preview.colorlib.com/theme/karma/img/product/p7.jpg", name: "ADIDAS HAMMER SOLE – BUILT FOR ATHLETES", price: "$150.00", oldPrice: "$210.00" },
+    { image: "https://preview.colorlib.com/theme/karma/img/product/p6.jpg", name: "ADIDAS SPORTS PRO WITH NEW HAMMER SOLE TECHNOLOGY", price: "$150.00", oldPrice: "$210.00" },
+    { image: "https://preview.colorlib.com/theme/karma/img/product/p5.jpg", name: "ADIDAS POWERSTEP – HAMMER SOLE FOR ACTIVE LIFESTYLES", price: "$150.00", oldPrice: "$210.00" },
+    { image: "https://preview.colorlib.com/theme/karma/img/product/p4.jpg", name: "ADIDAS PERFORMANCE BOOST WITH ALL-NEW HAMMER SOLE", price: "$150.00", oldPrice: "$210.00" },
+    { image: "https://preview.colorlib.com/theme/karma/img/product/p3.jpg", name: "ADIDAS PRO ATHLETE EDITION WITH HAMMER SOLE", price: "$150.00", oldPrice: "$210.00" },
+    { image: "https://preview.colorlib.com/theme/karma/img/product/p2.jpg", name: "ADIDAS HAMMER GRIP – ULTIMATE PERFORMANCE FOOTWEAR", price: "$150.00", oldPrice: "$210.00" },
+    { image: "https://preview.colorlib.com/theme/karma/img/product/p1.jpg", name: "ADDIDAS NEW HAMMER SOLE FOR SPORTS PERSON", price: "$150.00", oldPrice: "$210.00" }
   ];
 
-  const allProducts = [...latestProducts, ...comingProducts];
-
-  const filteredProducts = allProducts.filter((product) =>
-  product.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const itemsPerPage = 8;
+  const allProducts = [...latestProducts, ...comingProducts]; // İki array-i birləşdiririk
+  const totalPages = Math.ceil(allProducts.length / itemsPerPage);
 
   const [currentPage, setCurrentPage] = useState(0);
 
   const nextSlide = () => {
-    setCurrentPage((prev) => (prev + 1) % filteredProducts.length);
+    if (currentPage < totalPages - 1) {
+      setCurrentPage(currentPage + 1);
+    }
   };
 
   const prevSlide = () => {
-    setCurrentPage((prev) => (prev - 1 + filteredProducts.length) % filteredProducts.length);
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+    }
   };
 
-  const getHeading = () => {
-    return currentPage === 0 ? "Latest Products" : "Coming Soon";
-  };
-  
+  const visibleProducts = allProducts.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
+
   const addToCart = (product) => {
-  const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
-  existingCart.push(product);
-  localStorage.setItem('cart', JSON.stringify(existingCart));
-};
+    const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
+    existingCart.push(product);
+    localStorage.setItem('cart', JSON.stringify(existingCart));
+  };
 
   return (
-    <div className="relative p-10 pt-96  w-full max-w-screen-xl mx-auto">
+    <div className="relative p-10 pt-96 w-full max-w-screen-xl mx-auto">
       <div className="flex justify-between items-center mb-4 px-4">
-        <button
-          onClick={prevSlide}
-          className="text-gray-500 px-3 py-1 rounded-lg bg-gray-100 hover:text-black"
-        >
-          Prev
-        </button>
-        <h1 className="text-4xl font-bold">{getHeading()}</h1>
-        <button
-          onClick={nextSlide}
-          className="text-gray-500 px-3 py-1 rounded-lg bg-gray-100 hover:text-black"
-        >
-          Next
-        </button>
+        <button onClick={prevSlide} className="text-gray-500 px-3 py-1 rounded-lg bg-gray-100 hover:text-black">Prev</button>
+        <h1 className="text-4xl font-bold">Product Slider</h1>
+        <button onClick={nextSlide} className="text-gray-500 px-3 py-1 rounded-lg bg-gray-100 hover:text-black">Next</button>
       </div>
-
-      <div className="overflow-hidden w-full">
-        <div
-          className="flex transition-transform duration-700 ease-in-out w-full"
-          style={{
-            transform: `translateX(-${currentPage * 50}%)`,
-            width: `${filteredProducts.length * 100}%`,
-          }}
-        > 
-          {filteredProducts.map((group, groupIndex) => (
-            <div
-              key={groupIndex}
-              className="grid grid-cols-1  sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:grid-cols-4 gap-4 w-300 p-4"
-            >
-              {group.map((product, index) => (
-                <div
-                  key={index}
-                  className="p-4 items-center flex flex-col w-full bg-white "
-                >
-                  <img
-                    src={product.image}
-                    alt={`Product ${index + 1}`}
-                    className="w-full object-contain"
-                  />
-                  <div className="w-full mt-2">
-                    <h2 className="text-sm font-semibold leading-5 line-clamp-2">
-                      {product.name}
-                    </h2>
-                    <div className="flex gap-3">
-                      <p>{product.price}</p>
-                      <p className="text-gray-400 line-through">{product.oldPrice}</p>
-                    </div>
-
-
-                    <div className="flex flex-row gap-2  items-center relative">
+      
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:grid-cols-4 gap-4 w-full">
+        {visibleProducts.map((product, index) => (
+          <div key={index} className="p-4 items-center flex flex-col w-full bg-white">
+            <img src={product.image} alt={`Product ${index + 1}`} className="w-full object-contain" />
+            <div className="w-full mt-2">
+              <h2 className="text-sm font-semibold leading-5 line-clamp-2">{product.name}</h2>
+              <div className="flex gap-3 mb-2">
+                <p>{product.price}</p>
+                <p className="text-gray-400 line-through">{product.oldPrice}</p>
+              </div>
+              <div className="flex flex-row gap-2  items-center relative">
                     <div className="flex gap-4 relative">
                     <div className="relative group flex-shrink-0 transition-all duration-300">
                       <svg xmlns="http://www.w3.org/2000/svg" onClick={() => addToCart(product)} fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"
@@ -216,14 +103,10 @@ const ProductSlider = ({searchTerm}) => {
                       </span>
                     </div>
                   </div>
-                   </div>
-                  </div>
                 </div>
-              ))}
             </div>
-          ))}
-
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );
